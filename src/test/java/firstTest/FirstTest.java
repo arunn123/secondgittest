@@ -14,16 +14,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class FirstTest {
-@Test
-public void validateFirstTest() throws IOException {
-	WebDriver wd=new FirefoxDriver();
-	wd.manage().window().maximize();
-	wd.get("https://www.bing.com");
-	WebElement data=wd.findElement(By.name("q"));
-	data.sendKeys("Chennai");
-	data.sendKeys(Keys.ENTER);
-	
-	File src=((TakesScreenshot)wd).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(src, new File("C:\\Users\\Arun\\eclipse-workspace\\Github-test\\screenshot\\capture.jpg"));
-}
+	@Test
+	public void validateFirstTest() throws IOException {
+		WebDriver wd = new FirefoxDriver();
+		wd.manage().window().maximize();
+		wd.get("https://www.bing.com");
+		WebElement data = wd.findElement(By.name("q"));
+		data.sendKeys("Chennai");
+		data.sendKeys(Keys.ENTER);
+
+		File src = ((TakesScreenshot) wd).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(src, new File("C:\\Users\\Arun\\eclipse-workspace\\Github-test\\screenshot\\capture.jpg"));
+		int i = 1 / 0;
+	}
 }
